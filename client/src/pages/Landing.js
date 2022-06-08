@@ -1,6 +1,7 @@
 import main from "../assets/images/main.svg";
 import Wrapper from "../assets/wrappers/Landing";
 import { Logo } from "../components";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -15,10 +16,13 @@ const Landing = () => {
           </h1>
           <p>
             This MERN Full Stack app is made using react, react-router, node.js
-            with express, full AJAX with axios get and post requests, JWT and
-            authentication methods, for styling is used styled-components.
+            with express, full AJAX with axios get and post requests, Mongo
+            Atlas server with Mongoose, JWT and authentication methods, for
+            styling is used styled-components.
           </p>
-          <button className="btn btn-hero">Login/Register</button>
+          <Link to="/register" className="btn btn-hero">
+            Login/Register
+          </Link>
         </div>
 
         <img src={main} alt="job hunt" className="img main-img" />
