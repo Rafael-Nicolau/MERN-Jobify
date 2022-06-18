@@ -4,15 +4,17 @@ import axios from "axios";
 import {
   DISPLAY_ALERT,
   CLEAR_ALERT,
+  SETUP_USER_BEGIN,
+  SETUP_USER_SUCCESS,
+  SETUP_USER_ERROR,
+  TOGGLE_SIDEBAR,
+  LOGOUT_USER,
   // REGISTER_USER_BEGIN,
   // REGISTER_USER_SUCCESS,
   // REGISTER_USER_ERROR,
   // LOGIN_USER_BEGIN,
   // LOGIN_USER_SUCCESS,
   // LOGIN_USER_ERROR,
-  SETUP_USER_BEGIN,
-  SETUP_USER_SUCCESS,
-  SETUP_USER_ERROR,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -28,6 +30,7 @@ const initialState = {
   token: token,
   userLocation: userLocation || "",
   jobLocation: userLocation || "",
+  showSidebar: false,
 };
 
 const AppContext = React.createContext();
@@ -80,6 +83,15 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const logoutUser = () => {
+    dispatch({ type: LOGOUT_USER });
+    removeUserFromLocalStorage();
+  };
+
+  const toggleSidebar = () => {
+    dispatch({ type: TOGGLE_SIDEBAR });
+  };
+
   // const registerUser = async (currentUser) => {
   //   dispatch({ type: REGISTER_USER_BEGIN });
   //   try {
@@ -123,7 +135,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       // value={{ ...state, displayAlert, registerUser, loginUser, setupUser }}
-      value={{ ...state, displayAlert, setupUser }}
+      value={{ ...state, displayAlert, setupUser, toggleSidebar, logoutUser }}
     >
       {children}
     </AppContext.Provider>
