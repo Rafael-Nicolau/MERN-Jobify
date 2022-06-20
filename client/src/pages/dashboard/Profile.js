@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FormRow, Alert } from "../../components";
 import { useAppContext } from "../../context/appContext";
 import Wrapper from "../../assets/wrappers/DashboardFormPage";
-import { set } from "mongoose";
 
 const Profile = () => {
   const { user, showAlert, displayAlert, updateUser, isLoading } =
