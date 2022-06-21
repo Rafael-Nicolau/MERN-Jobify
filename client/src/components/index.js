@@ -5,6 +5,8 @@ import SmallSidebar from "./SmallSidebar";
 import BigSidebar from "./BigSidebar";
 import Navbar from "./Navbar";
 import FormRowSelect from "./FormRowSelect";
+import SearchContainer from "./SearchContainer";
+import JobsContainer from "./JobsContainer";
 
 export {
   FormRow,
@@ -14,4 +16,6 @@ export {
   BigSidebar,
   Navbar,
   FormRowSelect,
+  SearchContainer,
+  JobsContainer,
 };

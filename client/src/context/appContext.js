@@ -19,6 +19,7 @@ import {
   CREATE_JOB_ERROR,
   GET_JOB_BEGIN,
   GET_JOB_SUCCESS,
+  SET_EDIT_JOB,
   // REGISTER_USER_BEGIN,
   // REGISTER_USER_SUCCESS,
   // REGISTER_USER_ERROR,
@@ -216,6 +217,18 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const setEditJob = (id) => {
+    dispatch({ type: SET_EDIT_JOB, payload: { id } });
+  };
+
+  const editJob = () => {
+    console.log("edit job");
+  };
+
+  const deleteJob = (id) => {
+    console.log(`delete job: ${id}`);
+  };
+
   const toggleSidebar = () => {
     dispatch({ type: TOGGLE_SIDEBAR });
   };
@@ -272,7 +285,11 @@ const AppProvider = ({ children }) => {
         clearValues,
         handleChange,
         createJob,
+        getJobs,
         toggleSidebar,
+        setEditJob,
+        editJob,
+        deleteJob,
       }}
     >
       {children}

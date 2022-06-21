@@ -21,6 +21,8 @@ export const CREATE_JOB_ERROR = "CREATE_JOB_ERROR";
 export const GET_JOB_BEGIN = "GET_JOB_BEGIN";
 export const GET_JOB_SUCCESS = "GET_JOB_SUCCESS";
 
+export const SET_EDIT_JOB = "SET_EDIT_JOB";
+
 export const LOGOUT_USER = "LOGOUT_USER";
 
 // -> Old methods for register and login
