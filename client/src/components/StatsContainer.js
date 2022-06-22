@@ -5,7 +5,6 @@ import Wrapper from "../assets/wrappers/StatsContainer";
 
 const StatsContainer = () => {
   const { stats } = useAppContext();
-  console.log(stats);
   const defaultStats = [
     {
       title: "pending applications",
@@ -29,7 +28,6 @@ const StatsContainer = () => {
       bcg: "#ffeeee",
     },
   ];
-  console.log(defaultStats);
 
   return (
     <Wrapper>
