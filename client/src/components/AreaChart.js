@@ -15,6 +15,7 @@ const AreaChartComponent = ({ data }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis allowDecimals={false} />
+        <Tooltip />
         <Area type="monotone" dataKey="count" stroke="#2cb1bc" fill="#bef8fd" />
       </AreaChart>
     </ResponsiveContainer>
