@@ -1,13 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   margin-top: 4rem;
   text-align: center;
   button {
-    background: transparent;
+    background: var(--primary-500);
     border-color: transparent;
     text-transform: capitalize;
-    color: var(--primary-500);
+    color: var(--primary-50);
     font-size: 1.25rem;
     cursor: pointer;
   }
@@ -15,6 +15,17 @@ const Wrapper = styled.section`
     text-align: center;
     margin-bottom: 0.75rem;
   }
-`
+  .btn {
+    background: var(--primary-500);
+    border-color: transparent;
+    color: var(--primary-50);
+    letter-spacing: var(--letterSpacing);
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--primary-700);
+  }
+`;
 
-export default Wrapper
+export default Wrapper;
