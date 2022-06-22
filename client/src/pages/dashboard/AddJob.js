@@ -1,8 +1,10 @@
 import { FormRow, FormRowSelect, Alert } from "../../components";
 import { useAppContext } from "../../context/appContext";
+import { useNavigate } from "react-router-dom";
 import Wrapper from "../../assets/wrappers/DashboardFormPage";
 
 const AddJob = () => {
+  let navigate = useNavigate();
   const {
     isLoading,
     isEditing,
@@ -30,9 +32,16 @@ const AddJob = () => {
     }
     if (isEditing) {
       editJob();
+      setTimeout(() => {
+        navigate("/all-jobs");
+      }, 3000);
       return;
     }
     createJob();
+    setTimeout(() => {
+      navigate("/all-jobs");
+    }, 3000);
+    return;
   };
 
   const handleJobInput = (e) => {

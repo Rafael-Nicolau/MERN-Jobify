@@ -45,7 +45,15 @@ const Job = ({
             <button
               type="button"
               className="btn delete-btn"
-              onClick={() => deleteJob(_id)}
+              onClick={() => {
+                if (
+                  window.confirm(
+                    "This item will be permanently deleted, please confirm"
+                  )
+                ) {
+                  deleteJob(_id);
+                }
+              }}
             >
               Delete
             </button>

@@ -17,6 +17,10 @@ import {
   GET_JOB_BEGIN,
   GET_JOB_SUCCESS,
   SET_EDIT_JOB,
+  DELETE_JOB_BEGIN,
+  EDIT_JOB_BEGIN,
+  EDIT_JOB_SUCCESS,
+  EDIT_JOB_ERROR,
   // REGISTER_USER_BEGIN,
   // REGISTER_USER_SUCCESS,
   // REGISTER_USER_ERROR,
@@ -149,7 +153,7 @@ const reducer = (state, action) => {
       isLoading: false,
       showAlert: true,
       alertType: "success",
-      alertText: "New job created.",
+      alertText: "New job created. Redirecting...",
     };
   }
 
@@ -193,6 +197,40 @@ const reducer = (state, action) => {
       jobLocation,
       jobType,
       status,
+    };
+  }
+
+  if (action.type === EDIT_JOB_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+
+  if (action.type === EDIT_JOB_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "success",
+      alertText: "Job Updated. Redirecting...",
+    };
+  }
+
+  if (action.type === EDIT_JOB_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "danger",
+      alertText: action.payload.msg,
+    };
+  }
+
+  if (action.type === DELETE_JOB_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
     };
   }
 
